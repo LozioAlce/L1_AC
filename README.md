@@ -19,3 +19,7 @@ PLOTTING3.m plots the main input variables in a subplot figure
 SETUP.m run the above script all in onces and set some more variables
 
 MONTECARLO runs different simulations in order to test system robustness, recalls plotting to compares the behaviour in different conditions.
+
+
+
+I hope that someone will eventually flight testing it the real world
