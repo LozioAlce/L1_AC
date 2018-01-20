@@ -17,6 +17,8 @@ VARIANCE = VARIANCE(1:12,1:12)
 VARIANCE = VARIANCE *1;
 VARIANCE = VARIANCE *0.0000001; %REMOVE MEASUREMENT NOISE
 
+
+
 OUTPUT_DISTURBANCE = 0; %%ADD sinusoidal to input/output
 INPUT_DISTURBANCE = 0;  %%ADD sinusoidal to input/output
 %
@@ -30,7 +32,7 @@ x0 = stato_trim_body;
 x0(12) = 10; %% initial Altitude
 x0(11) =+0;  %% initial East Component
 %
-target_point = stato_trim_body;   %% where we eant to trim the A/C
+target_point = stato_trim_body;   %% where we want to trim the A/C
 
 target_point(12) = 0; % altitude we want to reach
 
@@ -38,9 +40,9 @@ target_point(12) = 0; % altitude we want to reach
 Am = A_LONG-B_LONG*K_LONG; %
 Bm=B_LONG;
 folder = pwd
-% cd('C:\Users\Paolo\Desktop\Flavio Finale\Code & MATLAB\Test_Navion_ok')
 TEST_NAVION
 TEST_NAVION_LAT
+close all
 cd(folder)
 
 Ts =0.01;
@@ -56,8 +58,10 @@ x0(9)=-0.0*pi/180;              %%initial psi
 omega_true = eye(4)%+0.05.*rand(4,4)
 % omega_true = eye(4)+0.1.*rand(4,4)
 PARAMETERS_AC(2) = rho*7/8
-sim ('L1AC_NAVION_Latest3')
+PARAMETERS_AC_old = PARAMETERS_AC;
+sim ('Copy_of_L1AC_NAVION_Latest3')
 hold on
+ll=1
 PLOTTING_SCRIPT % plot state variable
 PLOTTING_SCRIPT2 % plot state variable in a custom subplot
 PLOTTING_SCRIPT3 % plot input history
@@ -74,7 +78,9 @@ if ~exist('MONTECARLO_EXE') %% performs only if the script is not in a MONTECRAL
     omega_true = eye(4)
     
     
-    sim ('L1AC_NAVION_Latest3')
+%     sim ('L1AC_NAVION_Latest3')
+    sim ('Copy_of_L1AC_NAVION_Latest3')
+
     hold on
     PLOTTING_SCRIPT
     if max(time)>199 %% PLOTS only if simulation ends before a singularities (in order to speed up tuning of controller and PID  and investigate parameter variation that can be handled safely)
