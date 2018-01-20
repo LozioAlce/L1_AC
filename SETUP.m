@@ -40,6 +40,7 @@ target_point(12) = 0; % altitude we want to reach
 Am = A_LONG-B_LONG*K_LONG; %
 Bm=B_LONG;
 folder = pwd
+
 TEST_NAVION
 TEST_NAVION_LAT
 close all
