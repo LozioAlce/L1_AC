@@ -8,8 +8,8 @@ Am = A_LONG-B_LONG*K_LONG; % [u w q theta]_dot=A_LONG*[u w q theta]'
 Bm=B_LONG
 
 % close all
-plot(eig(Am),'*r'),hold on,grid on
-plot(eig(A_LONG),'*')
+% plot(eig(Am),'*r'),hold on,grid on
+% plot(eig(A_LONG),'*')
 
 C = [1 0 0 0
      0 0 0 1];
