@@ -1,5 +1,8 @@
 % close all
-figure(13)
+kk=13;
+set(groot, 'CurrentFigure', kk)
+
+
 pos1 = [0.04 0.71 0.27 0.25]; % [left bottom width height]
 subplot('Position',pos1)
 
@@ -64,4 +67,3 @@ hold on,grid on
 plot(time,psi)
 xlabel('Time [s]','FontSize', 14)
 ylabel('\psi [\circ]','FontSize', 14)
-
