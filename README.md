@@ -1,5 +1,5 @@
 # L1_AC
-This is a project where an Adaptive Flight Control is designed and tested using MATLAB/Simulink
+This is a project where an Adaptive Flight Control based on L1 adaptive control is designed and tested using MATLAB/Simulink
 I started with a nonlinear aircraft model. The contained description is inside the simulink MATLAB/Function
 
 Aircraft parameters (NOMINAL) are set by INIT.m 
@@ -20,6 +20,6 @@ SETUP.m run the above script all in onces and set some more variables
 
 MONTECARLO runs different simulations in order to test system robustness, recalls plotting to compares the behaviour in different conditions.
 
-
+19/01/2018 Some functions have been added that helps clean up plotting a bit
 
 I hope that someone will eventually flight testing it in the real world
