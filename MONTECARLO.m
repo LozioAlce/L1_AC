@@ -1,5 +1,5 @@
 close all,clear
-MONTECARLO_EXE =1; %% montecralo is running do not override AC parameters
+MONTECARLO_EXE =1; %% montecarlo is running do not override AC parameters
 kkk=1
 SETUP
 clear kkk
@@ -35,27 +35,27 @@ ACTUATOR_RUNs(MAX_RUN) = ACTUATOR_TRUE;
 BODY_Variables_RUNs(MAX_RUN) =  BODY_Variables;
     cc1=waitbar(0/(MAX_RUN),'simulation running');
 
-for ii=1:MAX_RUN                       % RUN 100 simulation with different PARAMETERS_AC +-30% of the nominal (even gravity has been changed), Cmalpha can be even unstable!! and it recovers
+for ii=1:MAX_RUN                       % RUN MAX_RUN simulations with different PARAMETERS_AC +/-30% of the nominal (even gravity has been changed), Cmalpha can be even unstable!! and it recovers
     omega_true=eye(4);
 %     PARAMETERS_AC_MONTECARLO = PARAMETERS_AC_old *0.3.*rand(size(PARAMETERS_AC))+PARAMETERS_AC_old;
     PARAMETERS_AC_MONTECARLO = PARAMETERS_AC_old + PARAMETERS_AC_old./3 .*rand(size(PARAMETERS_AC)).*sign(randn(size(PARAMETERS_AC)));
     PARAMETERS_AC_MONTECARLO(1) = PARAMETERS_AC_old(1);
     PARAMETERS_AC_MONTECARLO(2) = 1.225 + 1.225/2 *rand(1).*sign(randn(1)); % density
-    PARAMETERS_AC_MONTECARLO(2) = 1.225 - 1.225/1.4 *rand(1); % density
+    PARAMETERS_AC_MONTECARLO(2) = 1.225 - 1.225/2 *rand(1); % density
 %     SIGN = 1;
 %     PARAMETERS_AC_MONTECARLO(9) = rand(1).*SIGN; %CLde;
 %     PARAMETERS_AC_MONTECARLO(24) = rand(1)*SIGN; %Cmde
 
     PARAMETERS_AC_MONTECARLO(22)= rand(1).*sign(randn(1)); % Cmalpha
-    PARAMETERS_AC_MONTECARLO(15)=abs(1-abs(0.4*rand(1)))*Tmax;  % maximum thrust available reduced up to 30%
-    OMEGA_MONTECARLO = omega_true+randn(4,4)*0.15*0;                % add cross coupling uo to 0.1 % per control channel
+    PARAMETERS_AC_MONTECARLO(15)=abs(1-abs(0.4*rand(1)))*Tmax;  % maximum thrust available reduced up to 40%
+    OMEGA_MONTECARLO = omega_true+randn(4,4)*0.15*1;                % add cross coupling uo to 0.1 % per control channel
     
 %     OMEGA_MONTECARLO(1:3,4) =0;
 %     OMEGA_MONTECARLO(4,1:3) =0;
 %     OMEGA_MONTECARLO(4,4) =1;
     SETUP_MONTECARLO;                                           % RUN a simulation and plot the new data
     
-    ACTUATOR_RUNs(ii) = ACTUATOR_TRUE;
+    ACTUATOR_RUNs(ii) = ACTUATOR_TRUE;                          % STORE all input and outputs
     BODY_Variables_RUNs(ii) =  BODY_Variables;
    
     PARAMETRI_SIMULATI(:,ii)=PARAMETERS_AC_MONTECARLO ;         % store all the parameters
