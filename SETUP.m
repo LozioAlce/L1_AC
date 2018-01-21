@@ -17,21 +17,18 @@ VARIANCE = VARIANCE(1:12,1:12)
 VARIANCE = VARIANCE *1;
 VARIANCE = VARIANCE *0.0000001; %REMOVE MEASUREMENT NOISE
 
-
-
 OUTPUT_DISTURBANCE = 0; %%ADD sinusoidal to input/output
 INPUT_DISTURBANCE = 0;  %%ADD sinusoidal to input/output
 %
 TRIM
-%
+
 POLE_PLACEMENT
-% K_LATERAL_aug=K_LATERAL2_aug;   %% LQR Lateral Matrix
-%
+
 x0 = stato_trim_body;
 
 x0(12) = 10; %% initial Altitude
 x0(11) =+0;  %% initial East Component
-%
+
 target_point = stato_trim_body;   %% where we want to trim the A/C
 
 target_point(12) = 0; % altitude we want to reach
