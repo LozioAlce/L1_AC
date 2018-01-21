@@ -25,7 +25,7 @@ D = 1/(s+1)
 
 D = D*eye(2)
 
-Bum = [ 0 -Bm(3,1) Bm(2,1) Bm(2,1) ;0 -Bm(3,1) Bm(2,1) -Bm(2,1)]'; % not control channel
+Bum = [ 0 -Bm(3,1) Bm(2,1) Bm(2,1) ;0 -Bm(3,1) Bm(2,1) -Bm(2,1)]'; % not control channel UnMatched
 Bum'*Bm ==0;
 
 B = [Bm Bum]
@@ -33,7 +33,7 @@ B = [Bm Bum]
 rank([Bum Bm])
 Kg = -(C*Am^-1*Bm)^-1
 
-%% Scenario 1 semplice
+%% 
 omega = [0.6 -0.2 
          0.2  1.2];
 dAm = .75*rand(size(Am))
