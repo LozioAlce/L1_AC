@@ -7,7 +7,7 @@ step_dxdu = 1e-9;
 
 figure(1)
 %%%%%%%%%%%%%% computes the eigenvalues of A Longitudinal and Longitudinal
-%%%%%%%%%%%%%% augumented (augemente not used by L1)
+%%%%%%%%%%%%%% augumented (augumented not used by L1)
 
 subplot(2,3,1)
 EIG_A_LONG=eig(A_LONG);
