@@ -15,7 +15,7 @@ for ll=1:MAX_RUN+1
         
         PLOTTING_SCRIPT2
         PLOTTING_SCRIPT3
-        PLOTIING_SCRIPT4        
+        PLOTTING_SCRIPT4        
         
        
     end
