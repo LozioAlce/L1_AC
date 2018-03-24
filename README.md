@@ -21,5 +21,7 @@ SETUP.m run the above script all in onces and set some more variables
 MONTECARLO runs different simulations in order to test system robustness, recalls plotting to compares the behaviour in different conditions.
 
 19/01/2018 Some functions have been added that helps clean up plotting a bit
+24/03/2018 Files have been moved into Fixed wing and Quad
+Quad folder contains a first implementation for a Quadrotor: Quad implementation does not come with MONTECARLO scripts and robustness analysis yet.
 
-I hope that someone will eventually flight testing it in the real world
+I hope that someone will eventually flight testing it in the real world.
