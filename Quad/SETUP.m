@@ -88,8 +88,6 @@
 %% Setup Beginning
 clear all
 
-addpath('C:\Users\Paolo\Desktop\L1_AC-master')
-
 global LAMBDA inertia m g
 g = 9.81;
 Kt = 0.052; % Nm/Volt^2
