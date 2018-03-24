@@ -1,3 +1,5 @@
 This Folder contains the implementation of a quadrotor model, a L1 control law that tracks phi, theta, psi and altitude.
 It does incluse errors in terms of propellers speed and Inertia/mass parameters.
 Does not come with MONTECARLO scripts yet
+
+Simply run SETUP.m to test it.
