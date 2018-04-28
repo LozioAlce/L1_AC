@@ -19,7 +19,7 @@ set_param(model_name,'FixedStep','Ts/10');
 pause(1)
 close_system
 %
-V_trim = 50; % define trim speed
+V_trim = 60; % define trim speed
 SETUP % Run Nominal Parameter simulation and setup of the L1AC control system :) !!!
 %%
 ACTUATOR_NOMINAL = ACTUATOR_TRUE; % save nominal input history [de da dr dt]
