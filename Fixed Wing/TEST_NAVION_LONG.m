@@ -15,6 +15,7 @@ s = tf('s');
 %D = 1/s; % Test
 %D = 1/(s*1/5+1) % Test
 D = 1/(s+1);
+D = 1/(5*s+1); % May 2018 Test
 
 D = D*eye(2);
 % construct the unmatched matrix
