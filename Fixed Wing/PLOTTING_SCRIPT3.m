@@ -1,3 +1,4 @@
+%  Plot all the input in the same windows [de da dr dt]
 kk=15;
 set(groot, 'CurrentFigure', kk)
 pos1 = [0.04 0.75 .95 0.22]; % [left bottom width height]

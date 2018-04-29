@@ -1,5 +1,5 @@
 function AddLegend(N_MAX)
-% Add legends as Nominal values + DATA_1 + DATA_2 + ... + DATA_N_MAX
+% Add legends as Nominal + N_MAX
 FIG = get(0,'Children');
 
 stringa2 = ['legend(''','NOMINAL','''',','];
@@ -10,7 +10,10 @@ end
 
 stringa2(end) = ')';
 
+
 for kk = max(size(FIG)):-1:1
-    set(groot, 'CurrentFigure', FIG(kk))
-    eval(stringa2)
+%     figure(FIG(kk))
+    set(groot, 'CurrentFigure', FIG(kk));
+
+    eval(stringa2);
 end

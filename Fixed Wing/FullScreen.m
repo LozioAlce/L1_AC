@@ -1,5 +1,4 @@
 function [] = FullScreen()
-
 FIG = get(0,'Children');
 
 for kk = max(size(FIG)):-1:1

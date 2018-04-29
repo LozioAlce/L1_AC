@@ -16,9 +16,9 @@ S=184*0.3048^2;     %[m^2]
 b=33.4*0.3048;      %[m]
 c=5.7*0.3048;       %[m]
 T_W_ratio=0.33;
-Tmax=m*g*T_W_ratio;  %we guess TMAX 0.33 of the mass-MTOW
+Tmax=m*g*T_W_ratio;  %we guess TMAX 1 TENTH  OF the mass
 
-% LONGITUDINAL PARAMETERS
+% LONGITUDINAL
 
 CL_alpha=4.44;
 CDalpha=0.33;
@@ -35,7 +35,7 @@ Cm_eq=Cmalpha_dot+Cmq;
 
 CL=0.41;    %pag 400 Aircraft control and simulation Brian L.Stevin
 CD=0.05;    
-% To reverse engineering some parameters
+% To inverse engineering some parameters
 % CL=CL0+CLalpha*alpha+CLde*de
 % Cm=Cm0+Cmalpha*alpha+Cmde*de
 % CD=CD0+CD_alpha*alpha; 
@@ -46,8 +46,7 @@ CD=0.05;
 %Cm0=0.1325,de=0.0053,CL0=0.5411,CD0=0.0363;
 alpha=0.0889;de=-0.0256;
 CL_0=0.0242;CD_0=0.0206;Cm_0=0.0371; %reversed engineered parameters
-
-% LATERAL PARAMETERS
+%%LATERAL
 CY_beta=-.564;
 Cl_beta=-0.074;
 Cn_beta=0.071;
