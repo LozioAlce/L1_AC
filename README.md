@@ -26,4 +26,6 @@ MONTECARLO runs different simulations in order to test system robustness, recall
 
 Quad folder contains a first implementation for a Quadrotor: Quad implementation does not come with MONTECARLO scripts and robustness analysis yet.
 
+29/04/2018 Files have been reorganized in order to be more readable. Furthermore a state space implementation of the transfer matrix has been used since it was deemed to be easier to manage (TEST_NAVION_LAT, TEST_NAVION_LONG).
+
 I hope that someone will eventually flight testing it in the real world.
