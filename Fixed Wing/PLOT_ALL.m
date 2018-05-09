@@ -3,7 +3,7 @@ close all
 set(0, 'DefaultFigureVisible', 'off');
 set(groot, 'DefaultFigureVisible', 'off');
 cc=waitbar(1/(MAX_RUN+1),'Plotting everything');
-kkk=1;
+
 for ll=1:MAX_RUN+1
     BODY_Variables = BODY_Variables_RUNs(ll);
     ACTUATOR_TRUE = ACTUATOR_RUNs(ll);
@@ -17,12 +17,14 @@ for ll=1:MAX_RUN+1
 end
 
 set(groot, 'CurrentFigure', 12);
-plot(time,-Reference_Altitude.data,'k','Linewidth',2) %% Reference_Altitude = -h Ref
-% AddLegend(MAX_RUN);
+try
+    plot(time,-Reference_Altitude.data,'k','Linewidth',2) %% Reference_Altitude = -h Ref
+end
+    % AddLegend(MAX_RUN);
 Legenda = get(gca,'legend');
 try
     LegendaNew = [Legenda.String  ,'Reference'];
     legend(LegendaNew);
 end
 HideFig;
-close(cc)
+close(cc) % close the waitbar

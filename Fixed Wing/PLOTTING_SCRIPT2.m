@@ -1,5 +1,6 @@
-% close all
-% Plot everything in the same 3x3 Plot 
+% This script plots V alpha beta p q r phi theta and psi, with
+% custom position to maximize the space  and look
+% Plot everything in the same 3x3 Plot
 kk=13;
 set(groot, 'CurrentFigure', kk)
 

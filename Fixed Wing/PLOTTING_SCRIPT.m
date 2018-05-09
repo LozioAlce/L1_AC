@@ -1,3 +1,4 @@
+%  This script plot all the simulation data contained in BODY_Variables that is contained inside the simulink file
 time = BODY_Variables.Time; % take the Data
 if max(time)>199 % if has not crasched assign variable and plot
     u = BODY_Variables.Data(:,1);
@@ -22,10 +23,10 @@ if max(time)>199 % if has not crasched assign variable and plot
     V = sqrt(u.^2+v.^2+w.^2);
     alpha = atan(w./V)*180/pi;
     beta = asin(v./V)*180/pi;
-    
+
     %%
     if ~exist('ETICHETTA') % first time it runs. later on is defined and created
-        for kk=1:15
+        for kk = 1 : 15
             figure(kk);
             set(groot, 'CurrentFigure', kk);
         end
@@ -53,7 +54,7 @@ if max(time)>199 % if has not crasched assign variable and plot
     xlabel('Time [sec]')
     ylabel(ETICHETTA(kk))
 
-    for kk=4:6
+    for kk = 4:6
 
         set(groot, 'CurrentFigure', kk)
         plot(time,BODY_Variables.Data(:,kk)*180/pi),grid on,hold on
@@ -62,7 +63,7 @@ if max(time)>199 % if has not crasched assign variable and plot
 
     end
 
-    for kk=7:9
+    for kk = 7:9
 
         set(groot, 'CurrentFigure', kk)
         plot(time,BODY_Variables.Data(:,kk)*180/pi),grid on,hold on
@@ -71,7 +72,7 @@ if max(time)>199 % if has not crasched assign variable and plot
 
     end
 
-    for kk=10:12
+    for kk = 10:12
 
         set(groot, 'CurrentFigure', kk)
         plot(time,BODY_Variables.Data(:,kk)),grid on,hold on

@@ -15,7 +15,10 @@ s = tf('s');
 %D = 1/s; % Test
 %D = 1/(s*1/5+1) % Test
 D = 1/(s+1);
+D = 1/(10*s+1); % May 2018 Test
 D = 1/(5*s+1); % May 2018 Test
+D = 1/(.25*s+1); % May 2018 Test ok tuned
+
 
 D = D*eye(2);
 % construct the unmatched matrix
@@ -40,6 +43,7 @@ Kg = -(C*Am^-1*Bm)^-1; % the matrix from reference to input ('kindof dynamic inv
 
 
 K =20*eye(2); % Constant for adaptive control u_ad = -K D(s)eta_hat
+K =2*eye(2);  % Test May2018 06
 % supersided by state space rapresentation
 % D_NUM11 = cell2mat(D.Numerator(1,1));
 % D_DEN11 = cell2mat(D.Denominator(1,1));
@@ -68,8 +72,9 @@ TF_eta2m = D*(Hm\Hum);
 
 Ksp = -eye(size(Am))*0; %% No state predictor additional matrix (no reason behind) works well
 x0hat = x0_new;         %% starting state of the state predictor
-%% trasform in discrete state space form because is more compact than trasfer function and can be handled easier
+%% Trasform in discrete state space form because is more compact than trasfer function and can be handled easier
 sistemaLongitudinal = ss(TF_eta2m,'minimal');
 DiscretesistemaLongitudinal= c2d(sistemaLongitudinal,Ts);
+
 D_Longitudinal = ss(D,'minimal');
 DiscreteD_Longitudinal = c2d(D_Longitudinal,Ts);

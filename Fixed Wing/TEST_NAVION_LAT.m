@@ -19,6 +19,7 @@ D = 1/(1*s+1); %OK 06-18
 
 D = D*eye(2);
 D = 1/(3*s+1); %Test 04/28/2018
+D = D*eye(2);
 % construct the unmatched matrix
 Bum_LAT = [ 0 -Bm_LAT(3,1) Bm_LAT(2,1) Bm_LAT(2,1) ;0 -Bm_LAT(3,1) Bm_LAT(2,1) -Bm_LAT(2,1)]'; % not control channel
 Bum_LAT'*Bm_LAT == 0;
@@ -63,8 +64,9 @@ TF_eta2m = D*(Hm\Hum);
 Ksp_LAT = -eye(size(Am_LAT))*0;
 x0hat_LAT = x0_new_LAT;
 
+% Computes the controller in a statespace representation
 sistemaLateral = ss(TF_eta2m,'minimal');
-
 DiscretesistemaLateral= c2d(sistemaLateral,Ts);
+% Computes the lowpass filter in a statespace representation
 D_Lateral = ss(D,'minimal');
 DiscreteD_Lateral = c2d(D_Lateral ,Ts);
