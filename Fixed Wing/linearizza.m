@@ -6,6 +6,7 @@ function [A,B]=linearizza(fun,stato,input,step)
 % fun is the function to linearize associated to the dynamic close_system
 % stato_dot = fun(stato,input)
 % step is dx in the central difference sense f' = (f(x+dx)-f(x-dx))/(2dx)
+
   x_trim = stato(1:12);
   input_trim = input(1:4);
 

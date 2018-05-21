@@ -1,25 +1,26 @@
 % Initialize data for trim and simulation.
-% This script setup the nominal parametr of the aircraft dynamics in the perform
+% This script setup the nominal parameter of the aircraft dynamics
 % state_dot = f(state,input)
 
 global  g rho c b S CL_0 CL_alpha CL_eq CL_de CD_0 AR e CY_beta CY_dr ...
     Tmax Cl_beta Cl_p Cl_r Cl_da Cl_dr Cm_0 Cm_alpha Cm_eq Cm_de ...
     Cn_beta  Cn_p Cn_r Cn_da Cn_dr m Ixx Iyy Izz
+
 rho = 1.225;
 g = 9.81;
-m = 2750 * 0.453592;    %[kg]
-Ixx = 1048 * 1.35581795; %[kg m^2] cannot use num2cell simulink
-Iyy = 3000 * 1.35581795; %[kg m^2]
-Izz = 3530 * 1.35581795; %[kg m^2]
-Ixz = 0;              %[kg m^2]
-Iyz = 0;              %[kg m^2]
-Ixy = 0;              %[kg m^2]
+m = 2750 * 0.453592;      %[kg]
+Ixx = 1048 * 1.35581795;  %[kg m^2] cannot use num2cell simulink
+Iyy = 3000 * 1.35581795;  %[kg m^2]
+Izz = 3530 * 1.35581795;  %[kg m^2]
+Ixz = 0;                  %[kg m^2]
+Iyz = 0;                  %[kg m^2]
+Ixy = 0;                  %[kg m^2]
 
 S = 184 * 0.3048 ^ 2;     %[m^2]
-b = 33.4 * 0.3048;      %[m]
-c = 5.7 * 0.3048;       %[m]
+b = 33.4 * 0.3048;        %[m]
+c = 5.7 * 0.3048;         %[m]
 T_W_ratio = 0.33;
-Tmax = m * g * T_W_ratio;  %we guess TMAX 1 TENTH  OF the mass
+Tmax = m * g * T_W_ratio;  %we guess TMAX 33 %  OF the mass
 
 % LONGITUDINAL
 
@@ -57,11 +58,11 @@ Cl_p = - .41;
 Cn_p = - .0575;
 Cl_r = 0.107;
 Cn_r = - .125;
-Cl_da = 0.1342;%-0.134;    %%TO BE CHECKED OUT
-Cn_da = - 0.00346;   %%TO BE CHECKED OUT
-CY_dr = 0.157;     %%TO BE CHECKED OUT
-Cl_dr = 0.118;     %%TO BE CHECKED OUT
-Cn_dr = - .0717;     %%TO BE CHECKED OUT
+Cl_da = 0.1342; % -0.134;    %%TO BE CHECKED OUT
+Cn_da = - 0.00346;    %%TO BE CHECKED OUT
+CY_dr = 0.157;        %%TO BE CHECKED OUT
+Cl_dr = 0.118;        %%TO BE CHECKED OUT
+Cn_dr = - .0717;      %%TO BE CHECKED OUT
 
 %%
 AR = 6.04;   e = 0.8;

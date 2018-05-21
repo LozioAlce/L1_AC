@@ -1,4 +1,4 @@
-function [A_LONG,A_LATERAL,B_LONG,B_LATERAL,A_LONG_aug,B_LONG_aug,A_LATERAL_aug,B_LATERAL_aug]=estrai(A,B)
+function [A_LONG , A_LATERAL , B_LONG , B_LATERAL , A_LONG_aug , B_LONG_aug , A_LATERAL_aug , B_LATERAL_aug] = estrai(A , B)
 % Extract the A and B matrix for longitudinal and lateral dynamic
 % [A_LONG,A_LATERAL,B_LONG,B_LATERAL,A_LONG_aug,B_LONG_aug,A_LATERAL_aug,B_LATERAL_aug]=estrai(A,B)
 %

@@ -1,6 +1,7 @@
 function LinkAll()
-  FIG = get(0,'Children');
-  MAX_FIG = length(FIG);
+% LinkAll() links all the figure in the x-axis
+  FIG = get(0,'Children'); % Find all the figures automatically
+  MAX_FIG = length(FIG);   % Find max number of figures
   All_Axes = [];
   for kk = 1 : MAX_FIG
       N_Axes = length( FIG(kk).Children );

@@ -21,13 +21,13 @@ function dx = f_NAVION(state,input)
           Tmax Cl_beta Cl_p Cl_r Cl_da Cl_dr Cm_0 Cm_alpha Cm_eq Cm_de ...
           Cn_beta  Cn_p Cn_r Cn_da Cn_dr m Ixx Iyy Izz
 %% From body to wind for forces and moments
-  V = sqrt(u^2+v^2+w^2);
-  alpha = atan(w/u);
-  beta = asin(v/V);
+  V = sqrt( u^2 + v^2 + w^2);
+  alpha = atan( w/u );
+  beta = asin( v/V );
 %% CL CD and CY construction
-  CL = CL_0+CL_alpha*alpha+CL_eq*(c/(2*V))*q+CL_de*de;
+  CL = CL_0 + CL_alpha * alpha + CL_eq*( c/(2*V) ) * q + CL_de * de;
   CD = CD_0 + (CL^2)/(pi*AR*e);
-  CY = CY_beta *beta +CY_dr *dr;
+  CY = CY_beta * beta + CY_dr *dr;
 %% Forces
   Lift = 1/2*rho *V^2*S*CL;
   Drag = 1/2*rho *V^2*S*CD;
@@ -58,10 +58,6 @@ function dx = f_NAVION(state,input)
   phi_dot = p+q*sin(phi)*tan(theta)+r*cos(phi)*tan(theta);
   theta_dot = q*cos(phi)-r*sin(phi);
   psi_dot = q*sin(phi)*sec(theta) + r*cos(phi)*sec(theta);
-
-% xg_dot = u*cos(psi)*cos(theta)+v*(cos(psi)*sin(theta)*sin(phi)-sin(psi)*cos(phi))+w*(cos(psi)*sin(theta)*cos(phi)+sin(psi)*sin(phi));
-% yg_dot = u*sin(psi)*cos(theta)+v*(sin(psi)*sin(theta)*sin(phi)+cos(psi)*cos(phi))+w*(sin(psi)*sin(theta)*cos(phi)-cos(psi)*sin(phi));
-% h_dot  = u*sin(theta)-v*cos(theta)*sin(phi)-w*cos(theta)*cos(phi);
 
   xg_dot = u*cos(psi)*cos(theta)+v*(cos(psi)*sin(theta)*sin(phi)-sin(psi)*cos(phi))+w*(cos(psi)*sin(theta)*cos(phi)+sin(psi)*sin(phi));
   yg_dot = u*sin(psi)*cos(theta)+v*(sin(psi)*sin(theta)*sin(phi)+cos(psi)*cos(phi))+w*(sin(psi)*sin(theta)*cos(phi)-cos(psi)*sin(phi));

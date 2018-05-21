@@ -1,5 +1,5 @@
-function [T] = holdALL(INPUT)
-%   holdALL
+function [] = holdALL()
+%   holdALL() set an hold all to all the figures
 FIG = get(0,'Children');
 
 for kk = max(size(FIG)):-1:1

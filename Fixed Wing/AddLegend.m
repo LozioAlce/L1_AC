@@ -5,7 +5,7 @@ FIG = get(0,'Children');
 stringa2 = ['legend(''','NOMINAL','''',','];
 
 for kk =1:N_MAX
-	stringa2 = [stringa2,'''','DATA _ ',num2str(kk),'''',','];
+	stringa2 = [ stringa2 ,'''','DATA _ ', num2str(kk),'''',','];
 end
 
 stringa2(end) = ')';

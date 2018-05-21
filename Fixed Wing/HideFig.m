@@ -1,5 +1,5 @@
 function HideFig(input)
-%% Hide all the figure to speed-up plotting
+%% HideFig Hides all the figure to speed-up plotting
 % if function HideFig('on') set figures visible
 
     FIG = get(0,'Children');
